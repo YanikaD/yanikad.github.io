@@ -1,0 +1,45 @@
+
+<div class="projects__content">
+    <article class="projects__card"  *ngFor ="let project of projects; let i = index">
+        <img src="{{project.proj_img}}" alt="" class="projects__img">
+
+        <div class="projects__modal">
+            <div>
+                <h3 class="projects__title"><b>{{project.proj_name}}</b></h3>
+                <span class="projects__subtitle">{{project.proj_detail}}</span>
+                <div class="container">
+                    <div class="badge-board"  *ngFor = "let skill of project.skills">
+                        <span class="badge bg-secondary" >{{skill.skill_name}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+    <!-- <div class="flip-card"  [ngClass]=".flip">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+        </div>
+        <div class="flip-card-back">
+          <h1>John Doe</h1>
+          <p>Architect & Engineer</p>
+          <p>We love that guy</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="flip-card"  [ngClass]=".flip">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>John Doe</h1>
+            <p>Architect & Engineer</p>
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div> -->
+<!-- </section> -->

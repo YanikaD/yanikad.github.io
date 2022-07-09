@@ -1,0 +1,20 @@
+<div class="skills__container container grid">
+    <!-- <div class="skills__content grid" data-content id="skills"> -->
+    <div class="skills__content">
+        <div class="skills__area">
+            <div class="skills__box" *ngFor="let skill of skills">
+                <div class="skills__group">
+                    <div class="skills__data">
+                        <img src={{skill.skill_img}} class="skills__img">
+                        <div>
+                            <h3 class="skills__name">{{skill.skill_name}}</h3>
+                            <span class="skills__level">{{skill.skill_lvl}}</span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
