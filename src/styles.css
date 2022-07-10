@@ -398,7 +398,6 @@ img {
   bottom: 0;
 }
 
-
 /* ===== FOOTER =====*/
 .footer {
   background-color: var(--second-color);
@@ -485,6 +484,7 @@ img {
     /* display: flex; */
     justify-content: center;
   }
+
 
   .skills__area{
     grid-template-columns: repeat(3, 150px);
@@ -650,4 +650,3 @@ img {
     font-size: var(--smaller-font-size);
   }
 }
-
