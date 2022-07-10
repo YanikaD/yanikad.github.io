@@ -1,42 +1,34 @@
-
-<div class="form-body">
-    <!-- <div class="row"> -->
-        <div class="form-holder">
-            <div class="form-content">
-                <div class="form-items">
-                    <h3>Message Me</h3>
-                    <form class="requires-validation" novalidate>
-                        <div class="top-row">
-                            <div class="field-wrap form-floating">
-                                <input type="text" class="form-control" id="floatingName" placeholder="Firstname Lastname">
-                                <label for="floatingName">Your Name</label>
-                            </div>
-                        
-                            <div class="field-wrap form-floating">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                <label for="floatingInput">Email address</label>
-                            </div>
-                        </div>
-                        <div class="oth-row">
-                          <div class="field-wrap form-floating ">
-                            <input type="text" class="form-control" id="floatingSubject" placeholder="Subject">
-                            <label for="floatingSubject">Subject</label>
-                          </div>
-                        </div>
-                        <div class="oth-row">
-                          <div class="field-wrap form-floating">
-                            <textarea type="text" class="form-control" id="floatingMessage" placeholder="Message"></textarea>
-                            <label for="floatingMessage">Message</label>
-                          </div>
-                        </div>
-                        <div class="oth-row submit-row">
-                            <div class="form-button mt-3" id="submit">
-                                <button  type="submit" class="btn btn-primary btn-lg">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+<div class="contact__container bd-grid">
+    <form class="contact__form" [formGroup]="form" method="post" (ngSubmit)="onSubmit()">
+        <h3><p style="padding-bottom: 1rem;">Message Me</p></h3>
+       
+        <input formControlName="name" type="text" placeholder="Name" class="contact__input" id="name"
+            [class.valid]="form.get('name')?.valid && (form.get('name')?.dirty || form.get('name')?.touched)"
+            [class.invalid]="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)">
+        <div *ngIf="form.get('name')?.invalid && form.get('name')?.errors && (form.get('name')?.dirty || form.get('name')?.touched)">
+            <small class="text-danger" *ngIf="form.get('name')?.hasError('required')"> This field is required.</small>
         </div>
-    <!-- </div> -->
+        <input formControlName="email" type="mail" placeholder="Email" class="contact__input" id="email"
+            [class.valid]="form.get('email')?.valid && (form.get('email')?.dirty || form.get('email')?.touched)"
+            [class.invalid]="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)">
+        <div *ngIf="form.get('email')?.invalid && form.get('email')?.errors && (form.get('email')?.dirty || form.get('email')?.touched)">
+            <small class="text-danger" *ngIf="form.get('email')?.hasError('required')"> This field is required.</small>
+        </div>
+        <textarea formControlName="message" placeholder="Messages" cols="0" rows="10" class="contact__input" id="message"
+            [class.valid]="form.get('message')?.valid && (form.get('message')?.dirty || form.get('message')?.touched)"
+            [class.invalid]="form.get('message')?.invalid && (form.get('message')?.dirty || form.get('message')?.touched)">
+        </textarea>
+        <div *ngIf="form.get('message')?.invalid && form.get('message')?.errors && (form.get('message')?.dirty || form.get('message')?.touched)">
+            <small class="text-danger" *ngIf="form.get('message')?.hasError('required')"> This field is required.</small>
+        </div>
+        <input formControlName="honeypot" class="hidden" type="text" />
+        <div [ngClass]="!submitted? 'hidden' : 'visible'" >
+            <span>{{responseMessage}}</span>
+        </div>
+        <button type="submit" class="contact__button submit button" [ngClass]="isLoading? 'hidden' : 'visible'">Submit</button>
+        <button class="contact__button__loaded submit button" type="button" disabled [ngClass]="!isLoading? 'hidden' : 'visible'">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+        </button>
+    </form>
 </div>

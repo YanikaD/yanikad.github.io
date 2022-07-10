@@ -7,15 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-client';
+  sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2000,
+    delay: 200
+  });
   constructor(){
 
   }
 
   ngOnInit(): void {
-    console.log(window.location.hash);
+    this.sr.reveal('.home__data, .about__img, ',{}); 
+    this.sr.reveal('.home__img, .about__subtitle, .about__text',{reset:true,delay: 200}); 
+    this.sr.reveal('.home__social-icon, .contact__input',{ interval: 200}); 
+    this.sr.reveal('.skills__area, .projects__content',{reset:true,interval: 200});
   }
 
-  goTo(): void{
-    
-  }
+ 
 }

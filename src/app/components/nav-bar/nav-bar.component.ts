@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { link } from 'd3';
+import { delay } from 'rxjs';
 import { reveal } from 'scrollreveal';
 
 @Component({
@@ -10,12 +12,6 @@ export class NavBarComponent implements OnInit {
   navLink = document.querySelectorAll('.nav__link');
   sections = document.querySelectorAll('section[id]'); 
   navMenu: any;
-  sr = ScrollReveal({
-    origin: 'top',
-    distance: '60px',
-    duration: 2000,
-    delay: 200
-  });
 
   constructor() { }
 
@@ -23,10 +19,7 @@ export class NavBarComponent implements OnInit {
     this.showMenu('nav-toggle','nav-menu');
     this.navLink.forEach(n => n.addEventListener('click', this.linkAction))
     window.addEventListener('scroll', this.scrollActive);
-    this.sr.reveal('.home__data, .about__img, ',{}); 
-    this.sr.reveal('.home__img, .about__subtitle, .about__text, .skills__group',{delay: 400}); 
-    this.sr.reveal('.home__social-icon',{ interval: 200}); 
-    this.sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+    
   }
 
   showMenu(toggleId: string, navId: string){
@@ -62,6 +55,8 @@ export class NavBarComponent implements OnInit {
             another_sec!.classList.remove('active')
         }
     }
+    const navMenu = document.getElementById('nav-menu');
+    navMenu?.classList.remove('show');
   }
 
 }

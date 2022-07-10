@@ -1,0 +1,77 @@
+.contact__form{
+    position: relative;
+    border-radius: 1rem;
+    padding: 2rem;
+    /* overflow: hidden; */
+    box-shadow: 1px 2px 4px 1px rgba(0,0,0,0.5);
+  }
+  .contact__input {
+    width: 100%;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi);
+    padding: 1rem;
+    border-radius: .5rem;
+    border: 2px solid #ccc;
+    /* border: 1.5px solid var(--second-color); */
+    outline: none;
+    /* margin-top: var(--mb-4); */
+    /* box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.5); */
+  }
+  #email, #message{
+    margin-top: var(--mb-4);
+  }
+  .invalid{
+    border: 2px solid rgb(220, 53, 69);
+  }
+  .text-danger{
+    margin-bottom: var(--mb-4);
+  }
+  .contact__input:focus {
+    border: 2px solid var(--first-color);
+  }
+  .contact__button {
+    display: block;
+    border: none;
+    outline: none;
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    margin-left: auto;
+    margin-top: var(--mb-4);
+  }
+  .contact__button:hover {
+    color: #0d6efd;
+  }
+  .contact__button__loaded {
+    display: block;
+    border: none;
+    outline: none;
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    margin-left: auto;
+    margin-top: var(--mb-4);
+  }
+.hidden {
+	display: none
+}
+.visible {
+	display: block
+}
+
+@media screen and (min-width: 576px) {
+  .contact__form {
+    width: 500px;
+    padding-top: 2rem;
+  }
+  .contact__container {
+    justify-items: center;
+  }
+}
+
+
+@media screen and (min-width: 992px) {
+    .contact__form {
+      width: 700px;
+      padding-top: 2rem;
+    }
+  }
+

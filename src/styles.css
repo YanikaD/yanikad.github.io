@@ -398,27 +398,6 @@ img {
   bottom: 0;
 }
 
-/* ===== CONTACT =====*/
-.contact__input {
-  width: 100%;
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-semi);
-  padding: 1rem;
-  border-radius: .5rem;
-  border: 1.5px solid var(--second-color);
-  outline: none;
-  margin-bottom: var(--mb-4);
-}
-
-.contact__button {
-  display: block;
-  border: none;
-  outline: none;
-  font-size: var(--normal-font-size);
-  cursor: pointer;
-  margin-left: auto;
-}
-
 /* ===== FOOTER =====*/
 .footer {
   background-color: var(--second-color);
@@ -506,13 +485,6 @@ img {
     justify-content: center;
   }
 
-  .contact__form {
-    width: 360px;
-    padding-top: 2rem;
-  }
-  .contact__container {
-    justify-items: center;
-  }
 
   .skills__area{
     grid-template-columns: repeat(3, 150px);
@@ -677,4 +649,5 @@ img {
   .badge.bg-secondary{
     font-size: var(--smaller-font-size);
   }
+
 }
