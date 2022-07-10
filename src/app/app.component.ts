@@ -19,9 +19,8 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.sr.reveal('.home__data, .about__img, ',{}); 
-    this.sr.reveal('.home__img, .about__subtitle, .about__text',{reset:true,delay: 200}); 
+    this.sr.reveal('.home__img, .about__subtitle, .about__text',{delay: 200}); 
     this.sr.reveal('.home__social-icon, .contact__input',{ interval: 200}); 
-    this.sr.reveal('.skills__area, .projects__content',{reset:true,interval: 200});
   }
 
  
