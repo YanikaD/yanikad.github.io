@@ -33,7 +33,7 @@ export const mock_project = [
 ]
 //create profile data
 export const my_profile = new Profile("Yanika Dontong","/assets/Prefil.png",
-                                        "Front-end Developer","https://github.com/YanikaD",
+                                        "Web Developer","https://github.com/YanikaD",
                                         "https://www.linkedin.com/in/yanikad/",
                                         "/assets/YanikaD_Resume.pdf",
                                         "I'm a front-end developer based in Bangkok. I describe myself as a passionate developer who combining the logic and creative design to make user-friendly websites, and I have an eager to learn and trying new things to find the best solution to solve the problems. I am excited to work alongside other amazing programmers and learn so much more!")
